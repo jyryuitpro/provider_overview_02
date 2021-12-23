@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Provider<Dog>(
+      // create: 위젯이 필요로하는 Dog의 인스턴스를 만든다.
       create: (context) => Dog(name: 'Sun', breed: 'Bulldog', age: 3),
       child: MaterialApp(
         title: 'Provider Overview 02',
@@ -40,6 +41,7 @@ class MyHomePage extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
+              // Provider.of<T>: 원하는 타입의 인스턴스를 준다. 찾고자하는 타입의 인스턴스를 줘야한다.
               '- name: ${Provider.of<Dog>(context).name}',
               style: TextStyle(fontSize: 20.0),
             ),
@@ -62,6 +64,7 @@ class BreedAndAge extends StatelessWidget {
     return Column(
       children: [
         Text(
+          // Provider.of<T>: 원하는 타입의 인스턴스를 준다. 찾고자하는 타입의 인스턴스를 줘야한다.
           '- breed: ${Provider.of<Dog>(context).breed}',
           style: TextStyle(fontSize: 20.0),
         ),
@@ -82,6 +85,7 @@ class Age extends StatelessWidget {
     return Column(
       children: [
         Text(
+          // Provider.of<T>: 원하는 타입의 인스턴스를 준다. 찾고자하는 타입의 인스턴스를 줘야한다.
           '- age: ${Provider.of<Dog>(context).age}',
           style: TextStyle(fontSize: 20.0),
         ),
